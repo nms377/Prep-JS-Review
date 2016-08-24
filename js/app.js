@@ -233,19 +233,66 @@ Use a for loop to add only odd numbers to an Array.  Add 30 odd numbers to the o
 
 var oddNumbers = [];
 
-for(var i=0; i<30;i--){
+for(var i=0; i<60;i++){
+	if(i%2===1){
+		oddNumbers.push(i);
+	}
 }
+
+console.log(oddNumbers);
 
 /*20.  Declare a function named "oldEnough".
 This function takes in a number parameter age and returns a Boolean value true or false if the age is lower than the minimum legal drinking age in Antigua.
 
 Invoke this function by passing in a number value.  Google search Antigua's minimum drinking age to confirm the number value.  Store the return value to a variable named drinkinAlready and console log this variable*/
 
+function oldEnough(age){
+	if(age>18){
+		return true;
+	}else{
+		return false;
+	}
+}
+
+var drinkinAlready = oldEnough(30);
+console.log(drinkinAlready);
+
 /*21. Declare a function named fightDaPower.
 This function checks the value stored at the drinkinAlready variable in the previous exercise and if the value is true, return the string "I'm jumping on the next flight to Antigua." Otherwise return the string "I can't wait to be in the 5th grade!"  Console log the result.*/ 
 
+function fightDaPower(){
+	if(drinkinAlready === true){
+		return "I'm jumping on the next flight to Antigua.";
+	}else{
+		return "I can't wait to be in the 5th grade!";
+	}
+}
+
+console.log(fightDaPower(drinkinAlready));
+
+var drinkinAlready = oldEnough(10);
+console.log(fightDaPower(drinkinAlready));
+
 /*22. Declare a function named contentFiller which takes in a single parameter which will be an object.  Write a for loop that will put 5 random numbers between the values of 0 to 20 in the contents array in the bigBox object you created in exercise 10.  Console log the result.*/
+
+function contentFiller(obj){
+	for(var i=0; i<5; i++){
+		bigBox.contents.push(Math.floor(Math.random()*20));
+	}
+	return obj;
+}
+
+console.log(contentFiller(bigBox));
 
 /*23.  Declare a function named firstReverse which takes a single parameter str.  This function will take a string parameter being passed in and return the string in reverse order.*/
 
+function firstReserve(str){
+	var aString = '';
+	for(var i = str.length -1; i>=0; i--){
+		aString += str[i];
+	}
 
+	return aString;
+}
+
+console.log(firstReserve('c0c0loco'));
