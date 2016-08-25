@@ -86,6 +86,8 @@ console.log(india);
 };
 
 console.log(hotel);
+console.log(hotel.name);
+console.log(hotel.rooms);
 
 /*9.  Declare a literal object named "car" with properties and values set to:
 
@@ -162,7 +164,9 @@ function add(n1, n2){
   return n1 + n2;
 }
 
-console.log(add(dog, cat));
+var sum = add(dog, cat);
+
+console.log(sum);
 
 /*13.  Declare a function named subtract. 
 This function will take two parameters and returns the result of subtracting two numbers together. 
@@ -188,8 +192,8 @@ console.log(multiply(dog, cat));
 This function will access the value stored in the sum variable and uses this number to return the string "I eats X old fashioned donuts every morning to stay classy." X is the value stored in the sum variable.  Console log the result.  */ 
 
 function dunkinDonuts(n1, n2){
-  var X = add(n1, n2);
-  return 'I eats ' +X+' old fashioned donuts every morning to stay classy';
+  /*var X = add(n1, n2);*/
+  return 'I eats ' +sum+' old fashioned donuts every morning to stay classy';
 }
 
 console.log(dunkinDonuts(dog, cat));
@@ -277,7 +281,7 @@ console.log(fightDaPower(drinkinAlready));
 
 function contentFiller(obj){
 	for(var i=0; i<5; i++){
-		bigBox.contents.push(Math.floor(Math.random()*20));
+		obj.contents.push(Math.floor(Math.random()*20));
 	}
 	return obj;
 }
@@ -289,7 +293,7 @@ console.log(contentFiller(bigBox));
 function firstReserve(str){
 	var aString = '';
 	for(var i = str.length -1; i>=0; i--){
-		aString += str[i];
+		aString += str[i]; //+=??? revStr = revStr + i
 	}
 
 	return aString;
